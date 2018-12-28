@@ -1,0 +1,9 @@
+D:\ThreadTest\ThreadTest\bin\Release\runscript.exe.config
+D:\ThreadTest\ThreadTest\bin\Release\runscript.exe.manifest
+D:\ThreadTest\ThreadTest\bin\Release\runscript.application
+D:\ThreadTest\ThreadTest\bin\Release\runscript.exe
+D:\ThreadTest\ThreadTest\bin\Release\runscript.pdb
+D:\ThreadTest\ThreadTest\obj\Release\runscript.exe.manifest
+D:\ThreadTest\ThreadTest\obj\Release\runscript.application
+D:\ThreadTest\ThreadTest\obj\Release\runscript.exe
+D:\ThreadTest\ThreadTest\obj\Release\runscript.pdb

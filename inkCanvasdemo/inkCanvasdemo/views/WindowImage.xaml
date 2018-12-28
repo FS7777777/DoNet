@@ -1,0 +1,40 @@
+﻿<Window x:Class="inkCanvasdemo.views.WindowImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:inkCanvasdemo.views"
+        mc:Ignorable="d"
+        Title="WindowImage" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--<ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">-->
+        <ScrollViewer x:Name="root" Width="500" Height="400" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" ManipulationStarting="image_ManipulationStarting" ManipulationDelta="image_ManipulationDelta" ManipulationCompleted="image_ManipulationCompleted">
+            <Image x:Name="img" IsManipulationEnabled="True" Source="/inkCanvasdemo;component/resource/images/big.jpg" Stretch="None" MouseWheel="img_ScaleTransform" MouseMove="img_MouseMove" MouseLeftButtonDown="img_MouseLeftButtonDown" MouseLeftButtonUp="img_MouseLeftButtonUp" TouchDown="img_TouchDown" TouchUp="img_TouchUp">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <!--进行平移的函数-->
+                        <TranslateTransform  x:Name="translate" />
+                        <!--进行缩放的函数-->
+                        <ScaleTransform x:Name="sfr"/>
+                        <!--多点触控操作-->
+                        <MatrixTransform x:Name="matr"></MatrixTransform>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </ScrollViewer>
+        <!--</ScrollViewer>-->
+        <WrapPanel  Grid.Row="1">
+            <Button Click="start_mark" Width="50" Margin="20,0,0,0">标记</Button>
+            <Button Click="cancel_mark" Width="100" Margin="20,0,0,0">缩放/平移</Button>
+            <Button Click="img_big" Width="50" Margin="20,0,0,0">放大</Button>
+            <Button Click="img_small" Width="50" Margin="20,0,0,0">缩小</Button>
+            <Button Click="reset_image" Width="50" Margin="20,0,0,0">复位</Button>
+            <Button Click="re_draw_image" Width="50" Margin="20,0,0,0">随机删除重绘</Button>
+            <Button Click="save_image" Width="50" Margin="20,0,0,0">保存</Button>
+        </WrapPanel>
+    </Grid>
+</Window>

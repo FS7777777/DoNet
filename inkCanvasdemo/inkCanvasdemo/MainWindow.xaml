@@ -1,0 +1,36 @@
+﻿<Window x:Class="inkCanvasdemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:inkCanvasdemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <InkCanvas x:Name="inkCanvas" Grid.Row="0" Margin="0,-41,0,41" >
+            <InkCanvas.Background>
+                <ImageBrush ImageSource="resource/images/pic_top_1.png"/>
+            </InkCanvas.Background>
+        </InkCanvas>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Click="RadioButton_Click" Grid.Column="0">绘制墨迹</RadioButton>
+            <RadioButton Click="RadioButton_Click" Grid.Column="1">按点擦除</RadioButton>
+            <RadioButton Click="RadioButton_Click" Grid.Column="2">按线擦除</RadioButton>
+            <RadioButton Click="RadioButton_Click" Grid.Column="3">选中墨迹</RadioButton>
+            <RadioButton Click="RadioButton_Click" Grid.Column="4">停止操作</RadioButton>
+        </Grid>
+    </Grid>
+</Window>
